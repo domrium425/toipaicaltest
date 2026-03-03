@@ -8,21 +8,21 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='40' fill='black'/%3E%3Ctext x='50%25' y='62%25' font-size='110' text-anchor='middle' fill='%23d4af37'%3E%F0%9F%80%84%3C/text%3E%3C/svg%3E">
 
   <!-- ✅ iPhone「加入主畫面」專用 icon（PNG，iOS 可靠） -->
-  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAF/0lEQVR4nO3dS2hVVRzH8c+M0aQmGmW0Qm6oZVqGmQeQ0m2yq2s0mJmQx6pQZg9iQ2aKQZkqkVhWZbQmQm5mWmJbK2kq9e0lGm2b+9zv3b8z3fY7zv3h8f3m8z7n3vOe+55z7n8wqf9gkAAABg6o0kz0cAAACwq3l8vQAAAIAGYgkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAAA4z8F2r2m4gAAAABJRU5ErkJggg==" />
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAF/0lEQVR4nO3dS2hVVRzH8c+M0aQmGmW0Qm6oZVqGmQeQ0m2yq2s0mJmQx6pQZg9iQ2aKQZkqkVhWZbQmQm5mWmJbK2kq9e0lGm2b+9zv3b8z3fY7zv3h8f3m8z7n3vOe+55z7n8wqf9gkAAABg6o0kz0cAAACwq3l8vQAAAIAGYgkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAAA4z8F2r2m4gAAAABJRU5ErkJggg==" />
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="台牌神器">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <style>
-/* ================== (CSS 原封不動) ================== */
+/* ================== (CSS 原封不動 + 只改你要求嘅位) ================== */
 :root{
   --bg:#0f0f0f;
   --card:#1c1c1c;
   --muted:#2a2a2a;
   --text:#ffffff;
   --sub:#bdbdbd;
-  --gold:#d4af37;
+  --gold:#d4af37;     /* ✅ Dark mode 主色照舊金 */
   --accent:#00ff88;
   --danger:#cc0000;
   --shadow: rgba(212,175,55,0.12);
@@ -30,6 +30,8 @@
 
   --pos:#1f8a3a;  /* 深綠 */
   --neg:#ff3b30;
+
+  --btnTextOnPrimary:#000; /* ✅ Dark mode：金底配黑字 */
 }
 *{ box-sizing:border-box; }
 body{
@@ -46,13 +48,18 @@ body.white{
   --muted:#e8e8e8;
   --text:#000000;
   --sub:#333333;
-  --gold:#b88a12;
+
+  /* ✅ 1）白色 mode 主色變返 iOS 藍 */
+  --gold:#007aff;
+
   --accent:#007aff;
   --danger:#ff3b30;
   --shadow: rgba(0,0,0,0.06);
   --line: rgba(0,0,0,0.12);
   --pos:#1f8a3a;
   --neg:#ff3b30;
+
+  --btnTextOnPrimary:#fff; /* ✅ 白色 mode：藍底配白字 */
 }
 
 /* ===== 底設定 UI ===== */
@@ -191,20 +198,26 @@ header{
   font-size:13px;
 }
 .badge.gold{ background:rgba(212,175,55,0.18); color:var(--gold); }
+/* ✅ 白 mode：gold badge 用藍淡底（視覺舒服） */
+body.white .badge.gold{ background: rgba(0,122,255,0.12); color: var(--gold); }
 
 .bigBadge{
   font-size:20px;
   padding:12px 18px;
   box-shadow:0 0 12px rgba(212,175,55,0.25);
 }
+body.white .bigBadge{
+  box-shadow:0 0 12px rgba(0,122,255,0.18);
+}
 
+/* ✅ 1）按鈕字色修正：primary 按你 theme 自動換 */
 .btn{
   border:none;
   border-radius:999px;
   padding:10px 14px;
   font-weight:900;
   background:var(--gold);
-  color:#000;
+  color:var(--btnTextOnPrimary);
   cursor:pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -253,7 +266,7 @@ header{
   cursor:pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.tabBtn.active{ background:var(--gold); color:#000; }
+.tabBtn.active{ background:var(--gold); color:var(--btnTextOnPrimary); }
 
 .card{
   background:var(--card);
@@ -369,6 +382,11 @@ details[open] summary::before{ transform:rotate(90deg); }
   border-radius:10px;
   box-shadow:0 0 10px rgba(212,175,55,0.12);
 }
+/* ✅ 白 mode：active highlight 用藍淡底 */
+body.white .checkline.active{
+  background: rgba(0,122,255,0.10);
+  box-shadow:0 0 10px rgba(0,122,255,0.10);
+}
 
 .aiBox{
   background:rgba(0,255,136,0.08);
@@ -377,6 +395,10 @@ details[open] summary::before{ transform:rotate(90deg); }
   border-radius:14px;
   font-size:14px;
   line-height:1.6;
+}
+body.white .aiBox{
+  background: rgba(0,122,255,0.06);
+  border:1px solid rgba(0,122,255,0.18);
 }
 .aiBox .warn{ color:#ffcc00; font-weight:900; }
 .aiBox .tip{ color:var(--accent); font-weight:900; }
@@ -475,10 +497,17 @@ details[open] summary::before{ transform:rotate(90deg); }
   border:1px solid rgba(212,175,55,0.5);
   pointer-events:none;
 }
+body.white .seat::after{
+  border:1px solid rgba(0,122,255,0.45);
+}
 
 .seat.dealer{
   border-color: rgba(212,175,55,0.95);
   box-shadow:0 0 0 2px rgba(212,175,55,0.18) inset, 0 0 14px rgba(212,175,55,0.18);
+}
+body.white .seat.dealer{
+  border-color: rgba(0,122,255,0.92);
+  box-shadow:0 0 0 2px rgba(0,122,255,0.12) inset, 0 0 14px rgba(0,122,255,0.14);
 }
 
 .seat .nameWrap{ width:100%; display:flex; justify-content:center; }
@@ -554,6 +583,11 @@ details[open] summary::before{ transform:rotate(90deg); }
   box-shadow:0 0 10px rgba(212,175,55,0.25);
   display:none;
   z-index:5;
+}
+body.white .streakBadge{
+  background: rgba(0,122,255,0.92);
+  color:#fff;
+  box-shadow:0 0 10px rgba(0,122,255,0.18);
 }
 
 /* 斬掣：紅色；同名同視覺大小 */
@@ -692,7 +726,7 @@ details[open] summary::before{ transform:rotate(90deg); }
   font-size:12px;
   font-weight:900;
   background:var(--gold);
-  color:#000;
+  color:var(--btnTextOnPrimary);
   cursor:pointer;
   position:absolute;
   left:50%;
@@ -738,6 +772,9 @@ details[open] summary::before{ transform:rotate(90deg); }
   border:1px solid rgba(212,175,55,0.25);
   overflow:hidden;
 }
+body.white .modal{
+  border:1px solid rgba(0,122,255,0.22);
+}
 .modalHeader{
   padding:12px 14px 6px 14px;
   text-align:center;
@@ -773,6 +810,10 @@ details[open] summary::before{ transform:rotate(90deg); }
 .pickBtn.active{
   border-color: rgba(212,175,55,0.95);
   box-shadow:0 0 0 2px rgba(212,175,55,0.35) inset;
+}
+body.white .pickBtn.active{
+  border-color: rgba(0,122,255,0.95);
+  box-shadow:0 0 0 2px rgba(0,122,255,0.22) inset;
 }
 .pickBtn.disabled{ opacity:0.35; pointer-events:none; }
 
@@ -848,7 +889,7 @@ details[open] summary::before{ transform:rotate(90deg); }
 
   padding:10px 12px;
 
-  /* blur glass */
+  /* ✅ 2）玻璃效果：恢復透明模糊（dark + white 都有） */
   background: rgba(20,20,20,0.58);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -935,11 +976,16 @@ body.white .fixedTotal.iosBar{
   outline: 2px solid rgba(212,175,55,0.55);
   outline-offset: 3px;
 }
+body.white .iosCircle:focus-visible{
+  outline: 2px solid rgba(0,122,255,0.45);
+}
 
 body.white .iosCircle{
   border:1px solid rgba(0,0,0,0.10);
   background: rgba(0,0,0,0.04);
-  color: var(--text);
+
+  /* ✅ 白 mode：icon 主色用 iOS 藍，唔再黑到難睇 */
+  color: var(--gold);
 }
 .iosCircle:active{ transform: scale(0.95); }
 
@@ -965,17 +1011,18 @@ body.white .iosCircle.danger{
   padding:10px 12px;
   border-radius:999px;
 
-  background: rgba(212,175,55,0.14);
-  border: 1px solid rgba(212,175,55,0.28);
+  /* ✅ 2）中間總番數 badge 唔要有底色 */
+  background: transparent;
+  border: none;
 
   color: var(--gold);
   font-weight:900;
   white-space:nowrap;
+
+  cursor:pointer;
+  -webkit-tap-highlight-color: transparent;
 }
-body.white .iosPill{
-  background: rgba(212,175,55,0.12);
-  border: 1px solid rgba(184,138,18,0.28);
-}
+.iosPill:active{ transform: scale(0.98); }
 
 .iosPill .pillLabel{
   font-size:17px;
@@ -984,7 +1031,22 @@ body.white .iosPill{
 .iosPill .pillValue{
   font-size:18px;
   color: var(--gold);
-  text-shadow: 0 0 8px rgba(212,175,55,0.35);
+  text-shadow: 0 0 8px rgba(212,175,55,0.28);
+}
+body.white .iosPill .pillValue{
+  text-shadow: 0 0 8px rgba(0,122,255,0.18);
+}
+
+/* ✅ 4）Menu icon 放喺 badge 最左邊 */
+.iosMenuIcon{
+  width:18px;
+  height:18px;
+  display:block;
+}
+.iosMenuIcon path{
+  stroke: currentColor;
+  stroke-width:2.3;
+  stroke-linecap:round;
 }
 
 /* Optional: make bar a bit tighter on small phones */
@@ -993,6 +1055,45 @@ body.white .iosPill{
   .iosPill{ padding:9px 10px; gap:8px; }
   .iosPill .pillValue{ font-size:17px; }
 }
+
+/* ✅ Summary modal list */
+.sumList{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.sumGroup{
+  background: var(--muted);
+  border-radius:14px;
+  padding:10px;
+}
+.sumGroupTitle{
+  font-weight:900;
+  color: var(--gold);
+  margin-bottom:6px;
+}
+.sumItem{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:6px 0;
+  border-bottom:1px dashed var(--line);
+  color: var(--sub);
+  font-size:13px;
+}
+.sumItem:last-child{ border-bottom:none; }
+.sumItem .l{ color: var(--text); font-weight:800; }
+.sumItem .r{ color: var(--gold); font-weight:900; white-space:nowrap; }
+.sumMeta{
+  margin-top:10px;
+  padding:10px;
+  border-radius:14px;
+  background: rgba(0,0,0,0.10);
+  color: var(--sub);
+  font-size:13px;
+  line-height:1.7;
+}
+body.white .sumMeta{ background: rgba(0,0,0,0.04); }
   </style>
 </head>
 
@@ -1045,9 +1146,9 @@ body.white .iosPill{
         <div class="baseInputWrap">
          <input type="number" id="baseFan" inputmode="numeric">
          <span>番</span>
-    </div>
-    <button class="btn secondary smallBtn" id="resetBaseBtn">重置</button>
-    </div>
+        </div>
+        <button class="btn secondary smallBtn" id="resetBaseBtn">重置</button>
+      </div>
     </div>
 
     <div class="card">
@@ -1156,7 +1257,7 @@ body.white .iosPill{
 
 <!-- ✅ iOS17 Safari website bar style -->
 <div class="fixedTotal iosBar" id="fixedTotalBar">
-  <button class="iosCircle" id="clearBtn">
+  <button class="iosCircle" id="clearBtn" title="清晒番表">
     <svg class="iosSvgIcon" viewBox="0 0 24 24">
       <path d="M20 12
                a8 8 0 1 1 -16 0
@@ -1166,7 +1267,7 @@ body.white .iosPill{
             stroke="currentColor"
             stroke-width="2"
             stroke-linecap="round"/>
-      <path d="m11.5 1.25 
+      <path d="m11.5 1.25
                l3 3
                -3 3"
             fill="none"
@@ -1174,25 +1275,46 @@ body.white .iosPill{
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"/>
-  </svg>
+    </svg>
   </button>
-  
+
+  <!-- ✅ 4）badge 最左邊加 menu icon；✅ 3）撳 badge 彈出已揀番表 -->
   <div class="iosPill" id="fanPill" aria-label="總番數">
+    <svg class="iosMenuIcon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 7h14M5 12h14M5 17h14"></path>
+    </svg>
     <span class="pillLabel">總番數</span>
     <span class="pillValue" id="totalFan">0</span>
   </div>
 
-  <button class="iosCircle" id="toTab2Btn">
+  <button class="iosCircle" id="toTab2Btn" title="去計分區">
    <svg class="iosChevronR" viewBox="0 0 20 20">
     <path d="M9.5 6.5 L14.5 12 L9.5 17.5"
-          fill="none";
-          stroke="currentColor";
-          stroke-width="2.4";
-          stroke-linecap="round";
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
           stroke-linejoin="round"/>
    </svg>
   </button>
 </div>
+
+  <!-- ✅ 已揀番表 summary modal（由總番數 badge 打開） -->
+  <div class="modalMask" id="sumMask">
+    <div class="modal">
+      <div class="modalHeader">📋 已揀番表</div>
+      <div class="modalBody">
+        <div class="sumList" id="sumList"></div>
+        <div class="sumMeta" id="sumMeta"></div>
+      </div>
+      <div class="modalFooter">
+        <div class="modalActions">
+          <button class="btn secondary" type="button" id="sumCloseBtn">關閉</button>
+          <button class="btn" type="button" id="sumGoBtn">去番表位置</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- 食胡 modal -->
   <div class="modalMask" id="winMask">
@@ -1631,6 +1753,113 @@ function clearTab1All(){
   saveTab1State();
 }
 
+/* =========================================================
+   ✅ 3）總番數 badge 撳落去：show 已揀番表 + 同步展開番表 group
+========================================================= */
+function getFanSummary(){
+  // 返回：[{cat, items:[{name, fanText}]}], meta
+  const groups = [];
+  let any = false;
+
+  for(const g of fanData){
+    const picked = [];
+
+    for(const [id, name, fan, meta] of g.items){
+      if(meta === "dealerTimes") continue;
+
+      const cb = document.getElementById("cb_"+id);
+      if(!cb || !cb.checked) continue;
+
+      any = true;
+
+      const cntInput = document.querySelector(`.fanCount[data-target="${id}"]`);
+      if(cntInput){
+        const count = Math.max(safeInt(cntInput.value, 0), 0);
+        const totalFan = safeInt(fan,0) * count;
+        picked.push({ name, right: `${fan}×${count} = ${totalFan}番`, id });
+      }else{
+        picked.push({ name, right: `${fan}番`, id });
+      }
+    }
+
+    if(picked.length){
+      groups.push({ cat: g.cat, items: picked });
+    }
+  }
+
+  // dealer times
+  const times = Math.max(safeInt($("dealer_times")?.value ?? "0", 0), 0);
+  const dealerFan = (times > 0) ? (times*2 + 1) : 0;
+
+  const base = getBaseFan();
+  const rate = getRate();
+  const total = safeInt($("totalFan")?.innerText ?? "0", 0);
+
+  return {
+    groups,
+    meta: { any, times, dealerFan, base, rate, total }
+  };
+}
+
+function openSummaryModal(){
+  const { groups, meta } = getFanSummary();
+  const list = $("sumList");
+  const metaBox = $("sumMeta");
+  list.innerHTML = "";
+
+  if(!meta.any && meta.times===0 && meta.base===0){
+    list.innerHTML = `<div class="small" style="text-align:center;color:var(--sub);">（你未揀任何番）</div>`;
+  }else{
+    for(const g of groups){
+      const box = document.createElement("div");
+      box.className = "sumGroup";
+      box.innerHTML = `<div class="sumGroupTitle">${catIcon[g.cat]||"📂"} ${g.cat}</div>`;
+      for(const it of g.items){
+        const row = document.createElement("div");
+        row.className = "sumItem";
+        row.innerHTML = `<div class="l">${it.name}</div><div class="r">${it.right}</div>`;
+        box.appendChild(row);
+      }
+      list.appendChild(box);
+    }
+  }
+
+  const lines = [];
+  if(meta.times > 0) lines.push(`連莊次數：${meta.times}（= ${meta.dealerFan}番）`);
+  lines.push(`底：${meta.base}番`);
+  lines.push(`1番 = $${meta.rate}`);
+  lines.push(`總番數：${meta.total}`);
+
+  metaBox.innerHTML = lines.map(x=>`• ${x}`).join("<br>");
+
+  $("sumMask").style.display = "flex";
+}
+
+function closeSummaryModal(){
+  $("sumMask").style.display = "none";
+}
+
+function revealFanSelections(){
+  setTab(1);
+
+  // 展開有勾選嘅 groups
+  const checked = [...document.querySelectorAll(".fanCheck:checked")];
+  checked.forEach(cb=>{
+    const line = cb.closest(".checkline");
+    const det = cb.closest("details");
+    if(det) det.open = true;
+    if(line){
+      line.scrollIntoView({ behavior:"smooth", block:"center" });
+    }
+  });
+
+  // 如果無勾選，就去番表頂部
+  if(checked.length === 0){
+    const mount = $("fanListMount");
+    if(mount) mount.scrollIntoView({ behavior:"smooth", block:"start" });
+  }
+}
+
 /* ================= Tab2：座位映射（✅ 真執位） ================= */
 /*
   UI 座位 index：
@@ -1720,7 +1949,6 @@ function getPairsWherePulledIs(pid){
   for(const k in pullPairs){
     const p = pullPairs[k];
     if(!p) continue;
-    // ✅ 防止 localStorage 讀出嚟變咗 string
     const pulled = Number(p.pulled);
     const puller = Number(p.puller);
     if(Number.isFinite(pulled) && Number.isFinite(puller)){
@@ -1870,8 +2098,7 @@ function slashSeat(seatIdx){
   saveTab2State();
 }
 
-/* ======================= ✅ 拉 / 劈 / 引撆 / 清拉：結算核心 ======================= */
-
+/* ======================= ✅ 拉 / 劈 / 引撆 / 清拉：結算核心（唔郁呢 part） ======================= */
 function applyTransfer(fromPid, toPid, fan, rate, deltas){
   const amt = fan * rate;
   deltas[fromPid] -= amt;
@@ -1885,18 +2112,7 @@ function applyHalfTransferFloor(fromPid, toPid, fan, rate, deltas){
   deltas[toPid] += amt;
   return { halfFan, amt };
 }
-
-/* =========================================================
-   ✅【逐行 rewrite】清拉邏輯（完全照你 confirm 規則）
-   情況：存在 puller 拉緊 pulled（即 pulled 係「被拉者」）
-   當 pulled 今局贏：
-   - 如果係食胡，且出銃者 == puller → 劈（半數）→ 清呢條拉
-   - 其他贏法（自摸 / 食第三家）→ 清拉（全數畀 puller）→ 清呢條拉
-   - 如果 pulled 同時被多條拉（多人拉佢）→ 逐條計：
-       * 只有「出銃者=該 puller」嗰條係劈，其它全部係清拉（全數）
-========================================================= */
 function settleClearForWinner(winnerPid, loserPidOrNull, isSelf, deltas, notes){
-  // 0) 搵晒「有人拉緊 winner」嘅 incoming
   const incoming = getPairsWherePulledIs(winnerPid);
   if(!incoming.length) return;
 
@@ -1904,13 +2120,11 @@ function settleClearForWinner(winnerPid, loserPidOrNull, isSelf, deltas, notes){
   const winner = Number(winnerPid);
   const loser = (typeof loserPidOrNull === "number") ? Number(loserPidOrNull) : null;
 
-  // 1) 逐條 incoming 拉去處理
   for(const pair of incoming){
     const puller = Number(pair.puller);
-    const pulled = Number(pair.pulled); // 應該 == winner
+    const pulled = Number(pair.pulled);
     const fan = Math.max(safeInt(pair.fan, 0), 0);
 
-    // 1a) 安全：資料唔啱就刪咗條 pair
     if(!Number.isFinite(puller) || !Number.isFinite(pulled) || pulled !== winner){
       deletePair(pair.puller, pair.pulled);
       continue;
@@ -1920,32 +2134,19 @@ function settleClearForWinner(winnerPid, loserPidOrNull, isSelf, deltas, notes){
       continue;
     }
 
-    // 2) 判斷今局係「劈」定「清拉（引撆 / 斬清）」：
-    //    劈：非自摸 + 出銃者係該 puller
     const isPik = (!isSelf && loser !== null && loser === puller);
 
     if(isPik){
-      // 2a) 劈：被拉者食返拉者（半數轉帳），之後清呢條拉
       const r = applyHalfTransferFloor(pulled, puller, fan, rate, deltas);
       notes.push(`劈：${getPlayerName(pulled)} → ${getPlayerName(puller)} 半數拉番${r.halfFan}（$${r.amt}）清拉`);
     }else{
-      // 2b) 清拉：被拉者贏但唔係食返該 puller（自摸 / 食第三家）
-      //     → 全數畀 puller，之後清呢條拉
       const amt = applyTransfer(pulled, puller, fan, rate, deltas);
       notes.push(`清拉：${getPlayerName(pulled)} → ${getPlayerName(puller)} 全數畀${fan}（$${amt}）`);
     }
 
-    // 3) 無論劈定清拉，呢條 pair 都要清
     deletePair(puller, pulled);
   }
 }
-
-/*
-  ✅ 主結算：一局 (單胡 / 自摸)
-  - 先做「清拉結算」（如果贏家係某些人嘅被拉者）
-  - 再做「正常食胡/自摸」落分
-  - 同時為本局輸家建立/升針（贏家會拉輸家）
-*/
 function settleRound(winnerPid, loserPid, isSelf){
   const baseFan = safeInt($("totalFan")?.innerText ?? "0", 0);
   if(baseFan <= 0){
@@ -1959,10 +2160,8 @@ function settleRound(winnerPid, loserPid, isSelf){
   const deltas = [0,0,0,0];
   const notes = [];
 
-  // 1) ✅ 先處理清拉（只會處理「有人拉緊 winner」嘅 incoming；唔會理其他 pair）
   settleClearForWinner(winnerPid, isSelf ? null : loserPid, isSelf, deltas, notes);
 
-  // 2) ✅ 正常食胡/自摸：贏家必定拉輸家（食胡/自摸都會）
   const perSettle = [];
   for(const lp of losers){
     const pair = ensurePair(winnerPid, lp, baseFan);
@@ -1979,11 +2178,9 @@ function settleRound(winnerPid, loserPid, isSelf){
     }
   }
 
-  // 3) 落分 + 動畫
   for(let p=0;p<4;p++) scores[p] += deltas[p];
   for(let p=0;p<4;p++) showScoreDeltaForPid(p, deltas[p]);
 
-  // 4) 莊/連莊（保持你原本：贏家做新莊）
   if(winnerPid === dealerPlayer){
     dealerStreak[dealerPlayer] = (dealerStreak[dealerPlayer]||0) + 1;
   }else{
@@ -1992,7 +2189,6 @@ function settleRound(winnerPid, loserPid, isSelf){
     dealerStreak[dealerPlayer] = 1;
   }
 
-  // 5) Info
   const winName = getPlayerName(winnerPid);
   const typeTxt = isSelf ? "自摸" : `食胡（食 ${getPlayerName(loserPid)}）`;
 
@@ -2211,7 +2407,6 @@ function confirmWinModal(){
     return;
   }
 
-  // =================== ✅ 一炮多響（保持 UI 同操作；清拉邏輯用同一套 rewrite 版） ===================
   const baseFan = safeInt($("totalFan")?.innerText ?? "0", 0);
   if(baseFan <= 0){
     alert("Tab1 總番數係 0，先去 Tab1 勾番");
@@ -2224,12 +2419,10 @@ function confirmWinModal(){
   const deltas = [0,0,0,0];
   const notes = [];
 
-  // 1) 清拉：任何 winner 只要係被拉者，就逐條按規則（劈/清拉）
   for(const w of winners){
     settleClearForWinner(w, loser, false, deltas, notes);
   }
 
-  // 2) 正常多響：出銃者賠 N 份（每份 = 該 winner 對 loser 目前拉番後嘅金額）
   const perSettle = [];
   for(const w of winners){
     const pair = ensurePair(w, loser, baseFan);
@@ -2500,7 +2693,6 @@ function saveTab2State(){
 }
 
 function normalizePullPairs(obj){
-  // ✅ 防止 localStorage 讀出嚟變 string：puller/pulled/fan/needles 全部轉 number
   const out = {};
   if(!obj || typeof obj !== "object") return out;
   for(const k in obj){
@@ -2552,6 +2744,22 @@ function bindEvents(){
     saveTab1State();
   });
   $("clearBtn").addEventListener("click", clearTab1All);
+
+  // ✅ 3）撳總番數 badge：開 summary（唔改你原本計番）
+  $("fanPill").addEventListener("click", ()=>{
+    // 先確保當刻 total 同 UI 同步
+    updateTotalFan();
+    openSummaryModal();
+  });
+  $("sumCloseBtn").addEventListener("click", closeSummaryModal);
+  $("sumMask").addEventListener("click", (e)=>{
+    if(e.target === $("sumMask")) closeSummaryModal();
+  });
+  $("sumGoBtn").addEventListener("click", ()=>{
+    closeSummaryModal();
+    // 展開已揀番表 + 自動定位
+    revealFanSelections();
+  });
 
   for(let seatIdx=0; seatIdx<4; seatIdx++){
     const el = $("n"+seatIdx);
