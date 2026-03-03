@@ -906,6 +906,48 @@ body.white .iosPill{
 @media (max-width: 560px){
   .boxRow2{ flex-direction:column; }
 }
+
+/* ===== 兩個細Card一行 ===== */
+.dualCardRow{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+}
+
+/* 細Card */
+.miniCard{
+  flex:1;
+  background:var(--card);
+  border-radius:18px;
+  padding:14px;
+  box-shadow:0 0 20px rgba(0,0,0,0.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* 內容置中 */
+.miniInner{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+}
+
+/* 小重置掣 */
+.smallBtn{
+  padding:6px 10px;
+  font-size:13px;
+}
+
+/* 手機安全 */
+@media(max-width:480px){
+  .dualCardRow{
+    gap:8px;
+  }
+}
+
   </style>
 </head>
 
@@ -942,30 +984,30 @@ body.white .iosPill{
       </table>
     </div>
 
-    <!-- ✅ 1）同一行兩個 div box：左打幾錢、右底幾番 -->
-    <div class="boxRow2">
-      <div class="box">
-        <h2>打幾錢</h2>
-        <div class="baseRow">
-          <div class="baseInputWrap" aria-label="打幾錢">
-            <span class="tag">1番 = $</span>
-            <input class="miniNum" id="rate" type="number" value="1" min="0" inputmode="numeric">
-          </div>
-        </div>
-      </div>
+    <!-- ===== 打幾錢 + 底番（同一行雙細Card）===== -->
+<div class="dualCardRow">
 
-      <div class="box">
-        <h2>底幾番</h2>
-        <div class="baseRow">
-          <div class="baseInputWrap" aria-label="底番">
-            <span class="tag">底</span>
-            <input class="miniNum" id="baseFan" type="number" inputmode="numeric">
-            <span class="tag">番</span>
-          </div>
-          <button class="btn secondary smallBtn" id="resetBaseBtn" type="button">重置</button>
-        </div>
-      </div>
+  <!-- 左：打幾錢 -->
+  <div class="miniCard">
+    <div class="miniInner">
+      <span>$</span>
+      <input type="number" id="rate" class="input miniNum" value="1" inputmode="numeric">
+      <span>番</span>
+      <button class="btn secondary smallBtn" id="resetRateBtn">重置</button>
     </div>
+  </div>
+
+  <!-- 右：底番 -->
+  <div class="miniCard">
+    <div class="miniInner">
+      <span>底</span>
+      <input type="number" id="baseFan" class="input miniNum" value="0" inputmode="numeric">
+      <span>番</span>
+      <button class="btn secondary smallBtn" id="resetBaseBtn">重置</button>
+    </div>
+  </div>
+
+</div>
 
     <div class="card">
       <h2>番表</h2>
