@@ -171,7 +171,7 @@ body.white .btn.secondary{ color:#000; }
 .tabBtn{
   flex:1;
   border:none;
-  border-radius:14px;
+  border-radius:999px;
   padding:12px 10px;
   font-weight:900;
   background:var(--muted);
@@ -911,8 +911,8 @@ body.white .iosPill{
 .dualCardRow{
   display:flex;
   gap:12px;
-  margin-top:18px;
-  padding-bottom:4px;
+  margin:14px 0;
+  margin-bottom:14px;
 }
 
 /* 細Card */
@@ -930,10 +930,17 @@ body.white .iosPill{
 /* 內容置中 */
 .miniInner{
   display:flex;
+  flex-wrap:wrap;
   align-items:center;
   justify-content:center;
   gap:8px;
   width:100%;
+}
+
+.miniInner .smallBtn{
+  flex-basis:auto;
+  width:70%;
+  margin-top:6px;
 }
 
 /* 小重置掣 */
@@ -974,6 +981,30 @@ body.white .iosPill{
       </div>
     </div>
 
+    <!-- ===== 打幾錢 + 底番（同一行雙細Card）===== -->
+  <div class="dualCardRow">
+
+    <!-- 左：打幾錢 -->
+    <div class="miniCard">
+      <div class="miniInner">
+        <span>$</span>
+        <input type="number" id="rate" class="input miniNum" value="1" inputmode="numeric">
+        <span>番</span>
+        <button class="btn secondary smallBtn" id="resetRateBtn">重置</button>
+      </div>
+    </div>
+
+    <!-- 右：底番 -->
+    <div class="miniCard">
+      <div class="miniInner">
+        <span>底</span>
+        <input type="number" id="baseFan" class="input miniNum" value="0" inputmode="numeric">
+        <span>番</span>
+        <button class="btn secondary smallBtn" id="resetBaseBtn">重置</button>
+      </div>
+    </div>
+  </div>
+
     <div class="card">
       <h2>陰蟄錢</h2>
       <table class="table">
@@ -984,31 +1015,6 @@ body.white .iosPill{
         <tr><td>詐胡</td><td class="tRight strong">每家 30 元</td></tr>
       </table>
     </div>
-
-    <!-- ===== 打幾錢 + 底番（同一行雙細Card）===== -->
-<div class="dualCardRow">
-
-  <!-- 左：打幾錢 -->
-  <div class="miniCard">
-    <div class="miniInner">
-      <span>$</span>
-      <input type="number" id="rate" class="input miniNum" value="1" inputmode="numeric">
-      <span>番</span>
-      <button class="btn secondary smallBtn" id="resetRateBtn">重置</button>
-    </div>
-  </div>
-
-  <!-- 右：底番 -->
-  <div class="miniCard">
-    <div class="miniInner">
-      <span>底</span>
-      <input type="number" id="baseFan" class="input miniNum" value="0" inputmode="numeric">
-      <span>番</span>
-      <button class="btn secondary smallBtn" id="resetBaseBtn">重置</button>
-    </div>
-  </div>
-
-</div>
 
     <div class="card">
       <h2>番表</h2>
@@ -1135,9 +1141,6 @@ body.white .iosPill{
         <div class="fanSummaryTotal" id="fanSummaryTotal">
           <span>總番數</span><span id="fanSummaryTotalValue">0番</span>
         </div>
-        <div class="small" style="text-align:center;margin-top:10px;color:var(--sub);">
-          ✔ 依度係同步番表已勾選項目（含倍數 / 連莊 / 底）
-        </div>
       </div>
       <div class="modalFooter">
         <div class="modalActions">
@@ -1160,9 +1163,6 @@ body.white .iosPill{
         <div class="modalActions">
           <button class="btn secondary" type="button" id="copyHistoryBtn">📤 複製紀錄</button>
           <button class="btn danger" type="button" id="clearHistoryBtn">🚮 清除紀錄</button>
-        </div>
-        <div class="small" style="text-align:center;margin-top:8px;color:var(--sub);">
-          右上角（Fix Bar 右掣）可隨時打開
         </div>
       </div>
     </div>
