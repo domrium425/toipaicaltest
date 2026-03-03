@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='40' fill='black'/%3E%3Ctext x='50%25' y='62%25' font-size='110' text-anchor='middle' fill='%23d4af37'%3E%F0%9F%80%84%3C/text%3E%3C/svg%3E">
 
   <!-- ✅ iPhone「加入主畫面」專用 icon（PNG，iOS 可靠） -->
-  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAF/0lEQVR4nO3dS2hVVRzH8c+M0aQmGmW0Qm6oZVqGmQeQ0m2yq2s0mJmQx6pQZg9iQ2aKQZkqkVhWZbQmQm5mWmJbK2kq9e0lGm2b+9zv3b8z3fY7zv3h8f3m8z7n3vOe+55z7n8wqf9gkAAABg6o0kz0cAAACwq3l8vQAAAIAGYgkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAAA4z8F2r2m4gAAAABJRU5ErkJggg==" />
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAF/0lEQVR4nO3dS2hVVRzH8c+M0aQmGmW0Qm6oZVqGmQeQ0m2yq2s0mJmQx6pQZg9iQ2aKQZkqkVhWZbQmQm5mWmJbK2kq9e0lGm2b+9zv3b8z3fY7zv3h8f3m8z7n3vOe+55z7n8wqf9gkAAABg6o0kz0cAAACwq3l8vQAAAIAGYgkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAAA4z8F2r2m4gAAAABJRU5ErkJggg==" />
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="台牌神器">
@@ -306,7 +306,7 @@ body.white .checkline.active{
   border-radius:8px;
   height:16px;
   line-height:16px;
-  transform: scale(0.69);            /* 原本 0.82 → 視覺細約 2pt+ */
+  transform: scale(0.69);
   transform-origin:right center;
 }
 
@@ -816,14 +816,12 @@ body.white .iosCircle{
   vector-effect:non-scaling-stroke;
 }
 
-/* ✅ Center glass badge：menu icon 最左 + 文字（特別係數字）強制置中 */
+/* ✅ Center glass badge：menu icon 最左 + 文字（特別係數字）完全置中 */
 .iosPill{
   flex:1;
   min-width:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 12px;
+  position:relative;
+  height:44px;
   border-radius:999px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.14);
@@ -831,12 +829,10 @@ body.white .iosCircle{
   -webkit-backdrop-filter: blur(14px);
   color: var(--gold);
   font-weight:900;
-  white-space:nowrap;
   cursor:pointer;
   -webkit-tap-highlight-color: transparent;
   transition: transform .12s ease;
-  position:relative;
-  padding-left:44px; /* 留位俾 icon 黐最左 */
+  overflow:hidden;
 }
 body.white .iosPill{
   background: rgba(255,255,255,0.40);
@@ -845,6 +841,7 @@ body.white .iosPill{
 }
 .iosPill:active{ transform: scale(0.98); }
 
+/* 左邊 icon：絕對定位，唔影響置中 */
 .pillMenuIcon{
   width:18px;
   height:18px;
@@ -854,6 +851,7 @@ body.white .iosPill{
   left:14px;
   top:50%;
   transform:translateY(-50%);
+  pointer-events:none;
 }
 .pillMenuIcon path{
   stroke:currentColor;
@@ -861,14 +859,18 @@ body.white .iosPill{
   stroke-linecap:round;
 }
 
-/* 中間內容強制置中（含數字） */
+/* ✅ 中間內容：用 absolute + translate，完全置中唔受左右影響 */
 .pillCenter{
-  flex:1;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
   display:flex;
   align-items:center;
   justify-content:center;
   gap:10px;
-  min-width:0;
+  white-space:nowrap;
+  pointer-events:none;
 }
 .iosPill .pillLabel{
   font-size:16px;
@@ -878,28 +880,31 @@ body.white .iosPill{
   font-size:17px;
   color: var(--gold);
   text-align:center;
-  min-width: 2.2ch; /* 數字區保持置中感 */
+  min-width: 2.2ch;
 }
 
 @media (max-width:380px){
   .iosCircle{ width:40px; height:40px; }
-  .iosPill{ padding:9px 10px; padding-left:42px; }
+  .iosPill{ height:40px; }
   .pillCenter{ gap:8px; }
 }
 
-/* ✅ 兩個 card 同一行（Tab1：打幾錢 / 底幾番） */
-.cardRow2{
+/* ✅ 1）同一行兩個 div box（唔係 card） */
+.boxRow2{
   display:flex;
   gap:12px;
   align-items:stretch;
   margin-bottom:14px;
 }
-.cardRow2 .card{
-  margin-bottom:0;
+.boxRow2 .box{
   flex:1;
+  background:var(--card);
+  border-radius:18px;
+  padding:14px;
+  box-shadow: 0 0 22px var(--shadow);
 }
 @media (max-width: 560px){
-  .cardRow2{ flex-direction:column; }
+  .boxRow2{ flex-direction:column; }
 }
   </style>
 </head>
@@ -937,9 +942,9 @@ body.white .iosPill{
       </table>
     </div>
 
-    <!-- ✅ 1）兩個 card 同一行：左打幾錢，右底幾番 -->
-    <div class="cardRow2">
-      <div class="card">
+    <!-- ✅ 1）同一行兩個 div box：左打幾錢、右底幾番 -->
+    <div class="boxRow2">
+      <div class="box">
         <h2>打幾錢</h2>
         <div class="baseRow">
           <div class="baseInputWrap" aria-label="打幾錢">
@@ -949,7 +954,7 @@ body.white .iosPill{
         </div>
       </div>
 
-      <div class="card">
+      <div class="box">
         <h2>底幾番</h2>
         <div class="baseRow">
           <div class="baseInputWrap" aria-label="底番">
@@ -1054,8 +1059,6 @@ body.white .iosPill{
       <button class="btn secondary" type="button" id="undoBtn">↩️ 撤銷</button>
       <button class="btn danger" type="button" id="resetBtn">🔄 清除</button>
     </div>
-
-    <!-- ✅ 4）Tab2 底部食胡記錄已移除（由 Fix Bar 右掣開 sheet） -->
   </div>
 
   <!-- ✅ Fix Bar：兩頁都顯示 -->
@@ -1102,7 +1105,7 @@ body.white .iosPill{
     </div>
   </div>
 
-  <!-- ✅ 4）Tab2 Fix Bar 右掣：直接開「食胡記錄」sheet -->
+  <!-- ✅ Tab2 Fix Bar 右掣：直接開「食胡記錄」sheet -->
   <div class="modalMask" id="historyMask">
     <div class="modal" id="historyModal">
       <div class="modalGrab"></div>
@@ -2020,13 +2023,21 @@ function setRightBtnAsToTab2(){
 }
 function setRightBtnAsHistory(){
   const b = $("rightBarBtn");
+  /* ✅ 3）Tab2 右掣 icon：打橫三點（Safari style） */
   b.innerHTML = `
     <svg class="iosSvgIcon" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 7 H17"></path>
-      <path d="M7 12 H17"></path>
-      <path d="M7 17 H14"></path>
+      <path d="M6.5 12 h0"></path>
+      <path d="M12 12 h0"></path>
+      <path d="M17.5 12 h0"></path>
     </svg>
   `;
+  /* 用 stroke-width 做圓點 */
+  const paths = b.querySelectorAll("path");
+  paths.forEach(p=>{
+    p.style.strokeWidth = "4.5";
+    p.style.strokeLinecap = "round";
+  });
+
   b.onclick = ()=>{
     renderHistory();
     openSheet("historyMask");
@@ -2038,7 +2049,7 @@ function updateFixBarForTab(){
     setRightBtnAsToTab2();
   }else{
     setLeftBtnAsBackToTab1();
-    setRightBtnAsHistory();  // ✅ Tab2：右掣直入食胡記錄
+    setRightBtnAsHistory();
   }
 }
 
@@ -2640,7 +2651,6 @@ function bindEvents(){
 
   $("copyHistoryBtn").addEventListener("click", copyHistory);
   $("clearHistoryBtn").addEventListener("click", clearHistory);
-
   ["winMask","dealerMask","seatMask","yinMask","fanSummaryMask"].forEach(bindMaskTapToClose);
 }
 
