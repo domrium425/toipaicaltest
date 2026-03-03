@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='40' fill='black'/%3E%3Ctext x='50%25' y='62%25' font-size='110' text-anchor='middle' fill='%23d4af37'%3E%F0%9F%80%84%3C/text%3E%3C/svg%3E">
 
   <!-- ✅ iPhone「加入主畫面」專用 icon（PNG，iOS 可靠） -->
-  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAF/0lEQVR4nO3dS2hVVRzH8c+M0aQmGmW0Qm6oZVqGmQeQ0m2yq2s0mJmQx6pQZg9iQ2aKQZkqkVhWZbQmQm5mWmJbK2kq9e0lGm2b+9zv3b8z3fY7zv3h8f3m8z7n3vOe+55z7n8wqf9gkAAABg6o0kz0cAAACwq3l8vQAAAIAGYgkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAAA4z8F2r2m4gAAAABJRU5ErkJggg==" />
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAF/0lEQVR4nO3dS2hVVRzH8c+M0aQmGmW0Qm6oZVqGmQeQ0m2yq2s0mJmQx6pQZg9iQ2aKQZkqkVhWZbQmQm5mWmJbK2kq9e0lGm2b+9zv3b8z3fY7zv3h8f3m8z7n3vOe+55z7n8wqf9gkAAABg6o0kz0cAAACwq3l8vQAAAIAGYgkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAAA4z8F2r2m4gAAAABJRU5ErkJggg==" />
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="台牌神器">
@@ -563,7 +563,7 @@ body.white .center::after{
 
 .winBtn{
   border:none;
-  border-radius:10px;
+  border-radius:999px;
   padding:8px 12px;
   font-size:12px;
   font-weight:900;
@@ -596,7 +596,14 @@ body.white .winBtn{ color:#fff; }
   justify-content:center;
   z-index:999;
   padding:0;
+
+  /* ✅ Ultimate iOS: mask fade */
+  opacity:0;
+  transition: opacity 180ms ease;
 }
+.modalMask.show{ opacity:1; }
+.modalMask.closing{ opacity:0; }
+
 .modal{
   width:min(520px, 100%);
   background:var(--card);
@@ -608,25 +615,39 @@ body.white .winBtn{ color:#fff; }
   opacity:0;
   animation: sheetUp 260ms cubic-bezier(.2,.8,.2,1) forwards;
   padding-bottom: calc(12px + env(safe-area-inset-bottom));
+
+  will-change: transform, opacity;
+  touch-action: none; /* ✅ 俾我哋做 drag-to-close（handle 上） */
 }
 body.white .modal{
   border:1px solid rgba(0,0,0,0.08);
   box-shadow:0 18px 50px rgba(0,0,0,0.18);
 }
+
+/* ✅ Ultimate iOS open */
 @keyframes sheetUp{
-  to{ transform: translateY(0); opacity:1; }
+  from{ transform: translateY(28px) scale(0.98); opacity:0; }
+  to{ transform: translateY(0) scale(1); opacity:1; }
 }
+
+/* ✅ Ultimate iOS close */
 .modal.closing{
   animation: sheetDown 220ms cubic-bezier(.4,0,1,1) forwards;
 }
 @keyframes sheetDown{
-  to{ transform: translateY(24px); opacity:0; }
+  to{ transform: translateY(28px) scale(0.98); opacity:0; }
 }
+
 .modalGrab{
   height:20px;
   display:flex;
   align-items:center;
   justify-content:center;
+
+  /* ✅ drag handle */
+  cursor: grab;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
 }
 .modalGrab::before{
   content:"";
@@ -642,7 +663,12 @@ body.white .modalGrab::before{ background: rgba(0,0,0,0.12); }
   text-align:center;
   font-weight:900;
   color:var(--gold);
+
+  /* ✅ drag handle extension */
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
 }
+
 .modalBody{ padding:10px 14px 12px 14px; }
 .modalFooter{ padding:10px 14px 12px 14px; }
 
@@ -933,14 +959,33 @@ body.white .iosPill{
   flex-wrap:wrap;
   align-items:center;
   justify-content:center;
-  gap:8px;
+  gap:1px;
   width:100%;
 }
 
 .miniInner .smallBtn{
   flex-basis:auto;
-  width:70%;
+  width:50%;
   margin-top:6px;
+  border-radius:999px;
+  height:20px;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+  font-weight:900;
+}
+
+.miniInner span{
+  font-weight: 700;
+}
+
+.miniInner input{
+  color:var(--gold);
+  caret-color:var(--gold)
+;}
+
+.miniInner input:focus{
+  border-color: var(--gold);
 }
 
 /* 小重置掣 */
@@ -982,28 +1027,28 @@ body.white .iosPill{
     </div>
 
     <!-- ===== 打幾錢 + 底番（同一行雙細Card）===== -->
-  <div class="dualCardRow">
+    <div class="dualCardRow">
 
-    <!-- 左：打幾錢 -->
-    <div class="miniCard">
-      <div class="miniInner">
-        <span>$</span>
-        <input type="number" id="rate" class="input miniNum" value="1" inputmode="numeric">
-        <span>番</span>
-        <button class="btn secondary smallBtn" id="resetRateBtn">重置</button>
+      <!-- 左：打幾錢 -->
+      <div class="miniCard">
+        <div class="miniInner">
+          <span>$</span>
+          <input type="number" id="rate" class="input miniNum" value="1" inputmode="numeric">
+          <span>番</span>
+          <button class="btn secondary smallBtn" id="resetRateBtn">重置</button>
+        </div>
+      </div>
+
+      <!-- 右：底番 -->
+      <div class="miniCard">
+        <div class="miniInner">
+          <span>底</span>
+          <input type="number" id="baseFan" class="input miniNum" value="0" inputmode="numeric">
+          <span>番</span>
+          <button class="btn secondary smallBtn" id="resetBaseBtn">重置</button>
+        </div>
       </div>
     </div>
-
-    <!-- 右：底番 -->
-    <div class="miniCard">
-      <div class="miniInner">
-        <span>底</span>
-        <input type="number" id="baseFan" class="input miniNum" value="0" inputmode="numeric">
-        <span>番</span>
-        <button class="btn secondary smallBtn" id="resetBaseBtn">重置</button>
-      </div>
-    </div>
-  </div>
 
     <div class="card">
       <h2>陰蟄錢</h2>
@@ -2007,31 +2052,186 @@ function clearHistory(){
   saveTab2State();
 }
 
-/* ================== iOS sheet open/close helper ================== */
+/* ================== ✅ Ultimate iOS Sheet open/close + rubber band + drag to close ================== */
 function openSheet(maskId){
   const m = $(maskId);
   if(!m) return;
+
   m.style.display = "flex";
+  m.classList.remove("closing");
+  void m.offsetWidth; // force reflow
+  m.classList.add("show");
+
+  const modal = m.querySelector(".modal");
+  if(modal){
+    modal.classList.remove("closing");
+    // 清任何 drag 殘留 transform
+    modal.style.transition = "";
+    modal.style.transform = "";
+    modal.style.opacity = "";
+  }
 }
+
 function closeSheet(maskId){
   const m = $(maskId);
   if(!m) return;
+
   const modal = m.querySelector(".modal");
+
+  m.classList.add("closing");
+  m.classList.remove("show");
+
   if(modal){
     modal.classList.add("closing");
-    modal.addEventListener("animationend", ()=>{
-      modal.classList.remove("closing");
-      m.style.display = "none";
-    }, {once:true});
-  }else{
-    m.style.display = "none";
   }
+
+  const CLOSE_MS = 240; // 220ms + buffer
+  window.setTimeout(()=>{
+    if(modal){
+      modal.classList.remove("closing");
+      modal.style.transition = "";
+      modal.style.transform = "";
+      modal.style.opacity = "";
+    }
+    m.classList.remove("closing");
+    m.style.display = "none";
+  }, CLOSE_MS);
 }
+
 function bindMaskTapToClose(maskId){
   const m = $(maskId);
   if(!m) return;
   m.addEventListener("click", (e)=>{
     if(e.target === m) closeSheet(maskId);
+  });
+}
+
+/* ✅ drag-to-close（只用 grab/header 當 handle；rubber band + snap back） */
+function attachSheetGestures(){
+  const masks = document.querySelectorAll(".modalMask");
+  masks.forEach((mask)=>{
+    const modal = mask.querySelector(".modal");
+    if(!modal) return;
+
+    const handle = modal.querySelector(".modalGrab") || modal.querySelector(".modalHeader") || modal;
+
+    let dragging = false;
+    let startY = 0;
+    let currentY = 0;
+    let lastY = 0;
+    let lastT = 0;
+    let vel = 0;
+    let raf = 0;
+
+    const isMaskVisible = ()=> (mask.style.display === "flex");
+
+    const rubber = (dy)=>{
+      // iOS rubber band resistance
+      const max = 320;
+      const clamped = Math.max(0, dy);
+      const ratio = Math.min(clamped / max, 1);
+      return clamped * (1 - 0.45 * ratio);
+    };
+
+    const setTranslate = (y)=>{
+      const yy = Math.max(0, y);
+      modal.style.transform = `translateY(${yy}px) scale(${1 - Math.min(yy/900, 0.03)})`;
+      modal.style.opacity = String(1 - Math.min(yy/520, 0.35));
+    };
+
+    const onStart = (clientY)=>{
+      if(!isMaskVisible()) return;
+
+      // 避免喺 input / button 上拖動誤觸
+      const ae = document.activeElement;
+      if(ae && (ae.tagName === "INPUT" || ae.tagName === "TEXTAREA" || ae.tagName === "SELECT")) return;
+
+      dragging = true;
+      startY = clientY;
+      currentY = 0;
+      lastY = clientY;
+      lastT = performance.now();
+      vel = 0;
+
+      modal.classList.remove("closing");
+      modal.style.animation = "none"; // 停止 keyframe，交俾手勢
+      modal.style.transition = "";    // 手指跟隨無 transition
+
+      cancelAnimationFrame(raf);
+      raf = 0;
+    };
+
+    const onMove = (clientY)=>{
+      if(!dragging) return;
+      const dyRaw = clientY - startY;
+      const dy = rubber(dyRaw);
+
+      const now = performance.now();
+      const dt = Math.max(1, now - lastT);
+      const dyStep = clientY - lastY;
+      vel = dyStep / dt; // px per ms
+
+      lastY = clientY;
+      lastT = now;
+
+      currentY = dy;
+
+      if(!raf){
+        raf = requestAnimationFrame(()=>{
+          raf = 0;
+          setTranslate(currentY);
+        });
+      }
+    };
+
+    const snapBack = ()=>{
+      modal.style.transition = "transform 340ms cubic-bezier(.2,.85,.2,1.18), opacity 240ms ease";
+      modal.style.opacity = "";
+      modal.style.transform = "";
+      window.setTimeout(()=>{
+        modal.style.transition = "";
+        modal.style.animation = ""; // 恢復（下次 open 會由 keyframe）
+      }, 360);
+    };
+
+    const onEnd = ()=>{
+      if(!dragging) return;
+      dragging = false;
+
+      // 判斷關閉：位移夠大 or 速度夠快
+      const shouldClose = (currentY > 140) || (vel > 0.85);
+
+      if(shouldClose){
+        // 用你原本 closeSheet（會做 mask fade + sheetDown）
+        modal.style.transition = "";
+        modal.style.animation = ""; // 交回 keyframe close
+        closeSheet(mask.id);
+      }else{
+        // ✅ rubber band snap back
+        snapBack();
+      }
+    };
+
+    // Touch events
+    handle.addEventListener("touchstart", (e)=>{
+      if(e.touches.length !== 1) return;
+      onStart(e.touches[0].clientY);
+    }, {passive:true});
+
+    handle.addEventListener("touchmove", (e)=>{
+      if(!dragging) return;
+      // 防止頁面跟住滾動
+      e.preventDefault();
+      onMove(e.touches[0].clientY);
+    }, {passive:false});
+
+    handle.addEventListener("touchend", ()=>{
+      onEnd();
+    }, {passive:true});
+
+    handle.addEventListener("touchcancel", ()=>{
+      onEnd();
+    }, {passive:true});
   });
 }
 
@@ -2620,6 +2820,12 @@ function bindEvents(){
   $("baseFan").addEventListener("input", ()=>{ updateTotalFan(); saveTab1State(); });
   $("rate").addEventListener("input", ()=>{ updateTotalFan(); saveTab1State(); });
 
+  $("resetRateBtn").addEventListener("click", ()=>{
+    $("rate").value = "1";
+    updateTotalFan();
+    saveTab1State();
+  });
+
   $("resetBaseBtn").addEventListener("click", ()=>{
     $("baseFan").value = "5";
     updateTotalFan();
@@ -2701,6 +2907,10 @@ function bindEvents(){
 document.addEventListener("DOMContentLoaded", ()=>{
   loadTheme();
   renderFanList();
+
+  // ✅ Ultimate iOS gestures（drag-to-close + rubber band）
+  attachSheetGestures();
+
   bindEvents();
 
   loadTab1State();
