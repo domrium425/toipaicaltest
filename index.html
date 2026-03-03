@@ -8,14 +8,13 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='40' fill='black'/%3E%3Ctext x='50%25' y='62%25' font-size='110' text-anchor='middle' fill='%23d4af37'%3E%F0%9F%80%84%3C/text%3E%3C/svg%3E">
 
   <!-- ✅ iPhone「加入主畫面」專用 icon（PNG，iOS 可靠） -->
-  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAF/0lEQVR4nO3dS2hVVRzH8c+M0aQmGmW0Qm6oZVqGmQeQ0m2yq2s0mJmQx6pQZg9iQ2aKQZkqkVhWZbQmQm5mWmJbK2kq9e0lGm2b+9zv3b8z3fY7zv3h8f3m8z7n3vOe+55z7n8wqf9gkAAABg6o0kz0cAAACwq3l8vQAAAIAGYgkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAAA4z8F2r2m4gAAAABJRU5ErkJggg==" />
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAF/0lEQVR4nO3dS2hVVRzH8c+M0aQmGmW0Qm6oZVqGmQeQ0m2yq2s0mJmQx6pQZg9iQ2aKQZkqkVhWZbQmQm5mWmJbK2kq9e0lGm2b+9zv3b8z3fY7zv3h8f3m8z7n3vOe+55z7n8wqf9gkAAABg6o0kz0cAAACwq3l8vQAAAIAGYgkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAAA4z8F2r2m4gAAAABJRU5ErkJggg==" />
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="台牌神器">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <style>
-/* ================== (CSS 原封不動 + 只做你要嘅 UI 改動) ================== */
 :root{
   --bg:#0f0f0f;
   --card:#1c1c1c;
@@ -23,7 +22,7 @@
   --text:#ffffff;
   --sub:#bdbdbd;
 
-  --gold:#d4af37;        /* dark: keep */
+  --gold:#d4af37;
   --accent:#00ff88;
   --danger:#cc0000;
   --shadow: rgba(212,175,55,0.12);
@@ -32,7 +31,6 @@
   --pos:#1f8a3a;
   --neg:#ff3b30;
 
-  /* glass */
   --glassDark: rgba(20,20,20,0.58);
   --glassLight: rgba(255,255,255,0.72);
   --glassBorderDark: rgba(255,255,255,0.14);
@@ -54,9 +52,7 @@ body.white{
   --text:#000000;
   --sub:#333333;
 
-  /* ✅ 白色mode主色改 iOS 藍 */
   --gold:#007aff;
-
   --accent:#007aff;
   --danger:#ff3b30;
   --shadow: rgba(0,0,0,0.06);
@@ -143,7 +139,6 @@ body.white .badge.gold{ background:rgba(0,122,255,0.12); }
 }
 body.white .bigBadge{ box-shadow:0 0 12px rgba(0,122,255,0.18); }
 
-/* ✅ 白色mode：主按鈕字色自動更好睇 */
 .btn{
   border:none;
   border-radius:999px;
@@ -154,9 +149,9 @@ body.white .bigBadge{ box-shadow:0 0 12px rgba(0,122,255,0.18); }
   cursor:pointer;
   -webkit-tap-highlight-color: transparent;
 }
-body.white .btn{ color:#fff; }                /* iOS藍底 → 白字 */
+body.white .btn{ color:#fff; }
 .btn.secondary{ background:var(--muted); color:var(--text); font-weight:800; }
-body.white .btn.secondary{ color:#000; }      /* ✅ 白色mode secondary → 黑字 */
+body.white .btn.secondary{ color:#000; }
 .btn.danger{ background:var(--danger); color:#fff; }
 
 .btn.smallBtn{
@@ -250,8 +245,6 @@ details > summary{
   display:flex;
   align-items:center;
   gap:8px;
-
-  /* ✅ 番表大項目 14pt */
   font-size:14px;
 }
 details > summary::-webkit-details-marker{ display:none; }
@@ -297,7 +290,6 @@ body.white .checkline.active{
 .aiBox .tip{ color:var(--accent); font-weight:900; }
 .aiBox .ok{ color:var(--sub); }
 
-/* Tab1：番表內容細 1pt；大項目一行兩個 */
 .tab1FanBody{ font-size:12px; }
 .fanGrid{
   display:grid;
@@ -306,7 +298,7 @@ body.white .checkline.active{
 }
 .fanGrid details{ margin:0; }
 
-/* ✅ 數字 input（番表入面）再細：高度同字差唔多 */
+/* ✅ 數字 input（番表入面）再細：框大細不變，但字細 2pt（用縮放做到，避免 iOS zoom） */
 .input.count2{
   width:3.2ch;
   padding:0 6px;
@@ -314,7 +306,7 @@ body.white .checkline.active{
   border-radius:8px;
   height:16px;
   line-height:16px;
-  transform: scale(0.82);
+  transform: scale(0.69);            /* 原本 0.82 → 視覺細約 2pt+ */
   transform-origin:right center;
 }
 
@@ -344,7 +336,6 @@ body.white .checkline.active{
 }
 .mjCell{ width:100%; aspect-ratio:1/1; position:relative; }
 
-/* 玩家正方形 */
 .seat{
   width:100%;
   height:100%;
@@ -378,7 +369,6 @@ body.white .checkline.active{
 body.white .seat::after{
   border:1px solid rgba(0,122,255,0.35);
 }
-
 .seat.dealer{
   border-color: rgba(212,175,55,0.95);
   box-shadow:0 0 0 2px rgba(212,175,55,0.18) inset, 0 0 14px rgba(212,175,55,0.18);
@@ -403,7 +393,6 @@ body.white .seat.dealer{
   transform-origin:center;
 }
 
-/* 分數 */
 .seat .score{
   font-size:22px;
   font-weight:900;
@@ -413,7 +402,6 @@ body.white .seat.dealer{
 .score.pos{ color:var(--pos); }
 .score.neg{ color:var(--neg); }
 
-/* 分數動畫 */
 .scoreDelta{
   position:absolute;
   left:50%;
@@ -435,7 +423,6 @@ body.white .seat.dealer{
   100%{ opacity:0; transform:translate(-50%,-85%) scale(1.05); }
 }
 
-/* 被拉針 */
 .pullInfo{
   font-size:12px;
   color:var(--sub);
@@ -446,7 +433,6 @@ body.white .seat.dealer{
   min-height:14px;
 }
 
-/* 連莊 badge */
 .streakBadge{
   position:absolute;
   top:-10px;
@@ -467,7 +453,6 @@ body.white .streakBadge{
   box-shadow:0 0 10px rgba(0,122,255,0.18);
 }
 
-/* 斬掣 */
 .slashBtn{
   height:20px;
   width:70%;
@@ -485,7 +470,6 @@ body.white .streakBadge{
 }
 .slashBtn:disabled{ opacity:0.35; }
 
-/* 中心枱 */
 .center{
   width:100%;
   height:100%;
@@ -602,23 +586,13 @@ body.white .winBtn{ color:#fff; }
   margin-top:12px;
 }
 
-/* History */
-.historyItem{
-  padding:10px;
-  border-radius:14px;
-  background:var(--muted);
-  margin-bottom:10px;
-}
-.historyItem .title{ font-weight:900; }
-.historyItem .meta{ font-size:13px; color:var(--sub); margin-top:4px; }
-
-/* ================== ✅ iOS26 Sheet (取代舊 modal 視覺；內容不變) ================== */
+/* ================== iOS Sheet ================== */
 .modalMask{
   position:fixed;
   inset:0;
   background:rgba(0,0,0,0.55);
   display:none;
-  align-items:flex-end;               /* ✅ 底部上推 */
+  align-items:flex-end;
   justify-content:center;
   z-index:999;
   padding:0;
@@ -648,7 +622,6 @@ body.white .modal{
 @keyframes sheetDown{
   to{ transform: translateY(24px); opacity:0; }
 }
-
 .modalGrab{
   height:20px;
   display:flex;
@@ -675,7 +648,7 @@ body.white .modalGrab::before{ background: rgba(0,0,0,0.12); }
 
 .modalActions{
   display:grid;
-  grid-template-columns: 1fr 1fr;     /* ✅ 取消 / 確定 拉到最闊 */
+  grid-template-columns: 1fr 1fr;
   gap:10px;
 }
 .modalActions .btn{
@@ -684,7 +657,6 @@ body.white .modalGrab::before{ background: rgba(0,0,0,0.12); }
   border-radius:14px;
 }
 
-/* lists */
 .pickGrid2{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -769,7 +741,7 @@ body.white .selfBtn{ border:1px solid rgba(0,0,0,0.14); }
 }
 .seatRow select{ flex:1; }
 
-/* ================== ✅ Fix Bar (iOS 26 blur glass) — 兩頁都顯示 ================== */
+/* ================== ✅ Fix Bar (iOS 26 blur glass) ================== */
 .fixedTotal.iosBar{
   position:fixed;
   left:10px;
@@ -795,7 +767,6 @@ body.white .fixedTotal.iosBar{
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
-/* Circle icon buttons */
 .iosCircle{
   width:44px;
   height:44px;
@@ -805,17 +776,13 @@ body.white .fixedTotal.iosBar{
   justify-content:center;
   padding:0;
   border:none;
-
-  /* ✅ 跟 bar 一樣玻璃 feel */
   background: rgba(255,255,255,0.06);
   color: var(--gold);
   position:relative;
   line-height:0;
-
   border: 1px solid rgba(255,255,255,0.12);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   box-shadow: 0 1px 3px rgba(0,0,0,0.25);
   transition: transform .12s ease, background-color .12s ease, box-shadow .12s ease;
   -webkit-tap-highlight-color: transparent;
@@ -828,8 +795,6 @@ body.white .iosCircle{
 .iosCircle:active{
   transform: scale(0.92);
   box-shadow: 0 0 0 rgba(0,0,0,0.0);
-}
-.iosCircle:active{
   background: rgba(128,128,128,0.16);
 }
 .iosCircle:focus-visible{
@@ -851,30 +816,27 @@ body.white .iosCircle{
   vector-effect:non-scaling-stroke;
 }
 
-/* ✅ Center glass badge (無底色 / 玻璃 pill) + menu icon 入面最左 */
+/* ✅ Center glass badge：menu icon 最左 + 文字（特別係數字）強制置中 */
 .iosPill{
   flex:1;
   min-width:0;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
   padding:10px 12px;
   border-radius:999px;
-
-  /* ✅ 唔要有底色：只係玻璃 */
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.14);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-
   color: var(--gold);
   font-weight:900;
   white-space:nowrap;
-
   cursor:pointer;
   -webkit-tap-highlight-color: transparent;
   transition: transform .12s ease;
+  position:relative;
+  padding-left:44px; /* 留位俾 icon 黐最左 */
 }
 body.white .iosPill{
   background: rgba(255,255,255,0.40);
@@ -888,6 +850,10 @@ body.white .iosPill{
   height:18px;
   display:block;
   opacity:0.95;
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
 }
 .pillMenuIcon path{
   stroke:currentColor;
@@ -895,6 +861,15 @@ body.white .iosPill{
   stroke-linecap:round;
 }
 
+/* 中間內容強制置中（含數字） */
+.pillCenter{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-width:0;
+}
 .iosPill .pillLabel{
   font-size:16px;
   opacity:0.92;
@@ -902,116 +877,29 @@ body.white .iosPill{
 .iosPill .pillValue{
   font-size:17px;
   color: var(--gold);
+  text-align:center;
+  min-width: 2.2ch; /* 數字區保持置中感 */
 }
 
-/* Optional: tighter on small phones */
 @media (max-width:380px){
   .iosCircle{ width:40px; height:40px; }
-  .iosPill{ padding:9px 10px; gap:8px; }
+  .iosPill{ padding:9px 10px; padding-left:42px; }
+  .pillCenter{ gap:8px; }
 }
 
-/* ================== ✅ Action Sheet (Tab2 三點 menu) ================== */
-.actionList{
+/* ✅ 兩個 card 同一行（Tab1：打幾錢 / 底幾番） */
+.cardRow2{
   display:flex;
-  flex-direction:column;
-  gap:10px;
+  gap:12px;
+  align-items:stretch;
+  margin-bottom:14px;
 }
-.actionItem{
-  width:100%;
-  border-radius:14px;
-  border:1px solid rgba(128,128,128,0.25);
-  background: rgba(255,255,255,0.03);
-  padding:14px 12px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  cursor:pointer;
-  -webkit-tap-highlight-color: transparent;
+.cardRow2 .card{
+  margin-bottom:0;
+  flex:1;
 }
-body.white .actionItem{
-  background: rgba(255,255,255,0.60);
-  border:1px solid rgba(0,0,0,0.10);
-}
-.actionItem .left{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:900;
-}
-.actionItem .sub{
-  font-weight:700;
-  color:var(--sub);
-  font-size:12px;
-  margin-top:2px;
-}
-.actionItem .chev{
-  width:18px;
-  height:18px;
-  opacity:0.7;
-}
-.actionItem .chev path{
-  stroke:currentColor;
-  stroke-width:2.2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-.actionItem.danger{
-  border-color: rgba(255,59,48,0.35);
-}
-.actionItem.danger .left{ color:#ff3b30; }
-body.white .actionItem.danger .left{ color:#ff3b30; }
-
-/* ✅ Fan summary list */
-.fanSummaryList{
-  max-height: 52vh;
-  overflow:auto;
-  padding-right:2px;
-}
-.fanSummaryGroup{
-  margin-bottom:10px;
-  padding:10px;
-  border-radius:14px;
-  background: rgba(255,255,255,0.03);
-  border:1px solid rgba(128,128,128,0.18);
-}
-body.white .fanSummaryGroup{
-  background: rgba(255,255,255,0.60);
-  border:1px solid rgba(0,0,0,0.08);
-}
-.fanSummaryGroup .gTitle{
-  font-weight:900;
-  color:var(--gold);
-  margin-bottom:6px;
-  font-size:13px;
-}
-.fanSummaryRow{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding:6px 0;
-  border-bottom:1px dashed rgba(128,128,128,0.18);
-  color:var(--text);
-  font-size:13px;
-}
-body.white .fanSummaryRow{ color:#000; }
-.fanSummaryRow:last-child{ border-bottom:none; }
-.fanSummaryRow .rSub{ color:var(--sub); font-weight:800; }
-.fanSummaryTotal{
-  margin-top:10px;
-  padding:10px;
-  border-radius:14px;
-  border:1px solid rgba(0,122,255,0.18);
-  background: rgba(0,122,255,0.08);
-  color: var(--text);
-  font-weight:900;
-  display:flex;
-  justify-content:space-between;
-}
-body.white .fanSummaryTotal{
-  color:#000;
-  border:1px solid rgba(0,122,255,0.18);
-  background: rgba(0,122,255,0.08);
+@media (max-width: 560px){
+  .cardRow2{ flex-direction:column; }
 }
   </style>
 </head>
@@ -1049,22 +937,28 @@ body.white .fanSummaryTotal{
       </table>
     </div>
 
-    <!-- ✅ 1）打幾錢 + 底番：同一行、分兩個 box、同款 input format -->
-    <div class="card">
-      <h2>打幾錢 / 底設定</h2>
-      <div class="baseRow">
-        <div class="baseInputWrap" aria-label="打幾錢">
-          <span class="tag">1番 = $</span>
-          <input class="miniNum" id="rate" type="number" value="1" min="0" inputmode="numeric">
+    <!-- ✅ 1）兩個 card 同一行：左打幾錢，右底幾番 -->
+    <div class="cardRow2">
+      <div class="card">
+        <h2>打幾錢</h2>
+        <div class="baseRow">
+          <div class="baseInputWrap" aria-label="打幾錢">
+            <span class="tag">1番 = $</span>
+            <input class="miniNum" id="rate" type="number" value="1" min="0" inputmode="numeric">
+          </div>
         </div>
+      </div>
 
-        <div class="baseInputWrap" aria-label="底番">
-          <span class="tag">底</span>
-          <input class="miniNum" id="baseFan" type="number" inputmode="numeric">
-          <span class="tag">番</span>
+      <div class="card">
+        <h2>底幾番</h2>
+        <div class="baseRow">
+          <div class="baseInputWrap" aria-label="底番">
+            <span class="tag">底</span>
+            <input class="miniNum" id="baseFan" type="number" inputmode="numeric">
+            <span class="tag">番</span>
+          </div>
+          <button class="btn secondary smallBtn" id="resetBaseBtn" type="button">重置</button>
         </div>
-
-        <button class="btn secondary smallBtn" id="resetBaseBtn" type="button">重置</button>
       </div>
     </div>
 
@@ -1161,30 +1055,25 @@ body.white .fanSummaryTotal{
       <button class="btn danger" type="button" id="resetBtn">🔄 清除</button>
     </div>
 
-    <div class="card flatCard" style="margin-top:12px;">
-      <h2>📜 每局紀錄</h2>
-      <div id="historyList" class="small">（未有紀錄）</div>
-      <div class="row" style="justify-content:center;margin-top:10px;flex-wrap:wrap;">
-        <button class="btn" type="button" id="copyHistoryBtn">📤 複製紀錄</button>
-        <button class="btn secondary" type="button" id="clearHistoryBtn">🚮 清除紀錄</button>
-      </div>
-    </div>
+    <!-- ✅ 4）Tab2 底部食胡記錄已移除（由 Fix Bar 右掣開 sheet） -->
   </div>
 
-  <!-- ✅ Fix Bar：兩頁都顯示（Tab2 會變成：左「<」返Tab1；右「⋯」menu） -->
+  <!-- ✅ Fix Bar：兩頁都顯示 -->
   <div class="fixedTotal iosBar" id="fixedTotalBar">
     <button class="iosCircle" id="leftBarBtn" aria-label="左按鈕"></button>
 
-    <!-- ✅ 2/3/4）中間總番玻璃 badge + menu icon 入面最左 + 點擊出番表詳情 -->
     <div class="iosPill" id="fanPill" aria-label="總番數">
       <svg class="pillMenuIcon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M4 7 H20"></path>
         <path d="M4 12 H20"></path>
         <path d="M4 17 H20"></path>
       </svg>
-      <span class="pillLabel" id="pillLabel">總番數</span>
-      <span class="pillValue" id="totalFan">0</span>
-      <span class="pillLabel">番</span>
+
+      <div class="pillCenter">
+        <span class="pillLabel" id="pillLabel">總番數</span>
+        <span class="pillValue" id="totalFan">0</span>
+        <span class="pillLabel">番</span>
+      </div>
     </div>
 
     <button class="iosCircle" id="rightBarBtn" aria-label="右按鈕"></button>
@@ -1213,41 +1102,21 @@ body.white .fanSummaryTotal{
     </div>
   </div>
 
-  <!-- ================== iOS Sheet：Tab2 三點 menu ================== -->
-  <div class="modalMask" id="tab2MenuMask">
-    <div class="modal" id="tab2MenuModal">
+  <!-- ✅ 4）Tab2 Fix Bar 右掣：直接開「食胡記錄」sheet -->
+  <div class="modalMask" id="historyMask">
+    <div class="modal" id="historyModal">
       <div class="modalGrab"></div>
-      <div class="modalHeader">選單</div>
+      <div class="modalHeader">📜 食胡紀錄</div>
       <div class="modalBody">
-        <div class="actionList">
-          <div class="actionItem" id="menuViewHistory">
-            <div class="left">
-              <span>📜</span>
-              <div>
-                <div>查看食胡紀錄</div>
-                <div class="sub">即時顯示目前記錄</div>
-              </div>
-            </div>
-            <svg class="chev" viewBox="0 0 20 20" aria-hidden="true">
-              <path d="M8 5 L13 10 L8 15" fill="none"></path>
-            </svg>
-          </div>
-
-          <div class="actionItem danger" id="menuClearHistory">
-            <div class="left">
-              <span>🚮</span>
-              <div>
-                <div>清除紀錄</div>
-                <div class="sub">會清晒食胡紀錄</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="historyList" class="small">（未有紀錄）</div>
       </div>
       <div class="modalFooter">
         <div class="modalActions">
-          <button class="btn secondary" type="button" id="tab2MenuCloseBtn">取消</button>
-          <button class="btn" type="button" id="tab2MenuGoHistoryBtn">跳到紀錄</button>
+          <button class="btn secondary" type="button" id="copyHistoryBtn">📤 複製紀錄</button>
+          <button class="btn danger" type="button" id="clearHistoryBtn">🚮 清除紀錄</button>
+        </div>
+        <div class="small" style="text-align:center;margin-top:8px;color:var(--sub);">
+          右上角（Fix Bar 右掣）可隨時打開
         </div>
       </div>
     </div>
@@ -1364,10 +1233,9 @@ function fmtTime(ts){
 const catIcon = {
   "莊":"👑","一般":"🀄","叮":"🔔","自摸":"🤲","槓":"💥","平胡":"📏","雞胡":"🐔",
   "暗間":"🌙","般高 + 相逢":"📶","兄弟姊妹（碰牌）":"👥","步步高":"📈",
-  "歸":"🔄","一條龍":"🐉","多門齊":"🚪","么九":"🐦","奇牌":"✨"
+  "歸":"🔄","一條龍":"🐉","多門齊":"🚪","么九":"🐦","奇牌":"✨","底":"🧱"
 };
 
-/* ✅ 完整番表（含一炮雙響/三響） */
 const fanData = [
   { cat:"莊", items:[
     ["dealer_base","莊",1,false],
@@ -1696,13 +1564,11 @@ function clearTab1All(){
 }
 
 /* ================= Tab2：座位映射（✅ 真執位） ================= */
-const seatIndexToWind = ["E","N","S","W"]; // seat0->E, seat1->N, seat2->S, seat3->W
+const seatIndexToWind = ["E","N","S","W"];
 function getPidAtSeatIndex(seatIdx){
   const w = seatIndexToWind[seatIdx];
   return seatMap[w];
 }
-
-/* ✅ 分數動畫 helper（pid → 目前顯示邊個 seat） */
 function getSeatIndexOfPid(pid){
   for(let seatIdx=0; seatIdx<4; seatIdx++){
     if(getPidAtSeatIndex(seatIdx) === pid) return seatIdx;
@@ -1732,14 +1598,10 @@ let pulledNeedle = [0,0,0,0];
 let undoStack = [];
 let gameHistory = [];
 
-/* seatMap: wind -> playerId */
 let seatMap = loadSeatMap();
 
-/* =========================================================
-   ✅ 新版：多條「拉」同時存在（pair-based）
-========================================================= */
-let pullPairs = {}; // Record<string, {puller:number, pulled:number, fan:number, needles:number, ts:number}>
-
+/* ✅ 多條「拉」同時存在（pair-based） */
+let pullPairs = {};
 function pairKey(puller, pulled){ return `${puller}>${pulled}`; }
 function clone(obj){ return JSON.parse(JSON.stringify(obj)); }
 
@@ -1754,7 +1616,6 @@ function syncFanBadgeToTab2(){
   if(badge) badge.textContent = `本局番數：${total}`;
 }
 
-/* ===== pullPairs helpers ===== */
 function ensurePair(puller, pulled, baseFan){
   const k = pairKey(puller, pulled);
   if(!pullPairs[k]){
@@ -1796,7 +1657,6 @@ function syncPulledNeedleFromPairs(){
   }
 }
 
-/* ================= Tab2：render seats reflect player data ===== */
 function renderAllTab2(){
   syncPulledNeedleFromPairs();
 
@@ -2042,9 +1902,9 @@ function renderHistory(){
     const roundNo = gameHistory.length - idxFromEnd;
     if(r.kind === "yin"){
       return `
-        <div class="historyItem">
-          <div class="title">#${roundNo} 陰蟄錢：${r.yinType} → ${getPlayerName(r.player)}</div>
-          <div class="meta">${fmtTime(r.ts)}｜已按規則加減分</div>
+        <div style="padding:10px;border-radius:14px;background:var(--muted);margin-bottom:10px;">
+          <div style="font-weight:900;">#${roundNo} 陰蟄錢：${r.yinType} → ${getPlayerName(r.player)}</div>
+          <div style="font-size:13px;color:var(--sub);margin-top:4px;">${fmtTime(r.ts)}｜已按規則加減分</div>
         </div>
       `;
     }
@@ -2060,9 +1920,9 @@ function renderHistory(){
     ].filter(Boolean).join("｜");
 
     return `
-      <div class="historyItem">
-        <div class="title">第 ${roundNo} 局：${winName} ${typeTxt}</div>
-        <div class="meta">${fmtTime(r.ts)}｜${extra}</div>
+      <div style="padding:10px;border-radius:14px;background:var(--muted);margin-bottom:10px;">
+        <div style="font-weight:900;">第 ${roundNo} 局：${winName} ${typeTxt}</div>
+        <div style="font-size:13px;color:var(--sub);margin-top:4px;">${fmtTime(r.ts)}｜${extra}</div>
       </div>
     `;
   }).join("");
@@ -2101,7 +1961,7 @@ function clearHistory(){
   saveTab2State();
 }
 
-/* ================== ✅ iOS sheet open/close helper ================== */
+/* ================== iOS sheet open/close helper ================== */
 function openSheet(maskId){
   const m = $(maskId);
   if(!m) return;
@@ -2129,7 +1989,7 @@ function bindMaskTapToClose(maskId){
   });
 }
 
-/* ================== ✅ Fix Bar 動態：Tab1 / Tab2 不同按鈕 ================== */
+/* ================== Fix Bar 動態：Tab1 / Tab2 不同按鈕 ================== */
 function setLeftBtnAsClear(){
   const b = $("leftBarBtn");
   b.innerHTML = `
@@ -2158,16 +2018,19 @@ function setRightBtnAsToTab2(){
   `;
   b.onclick = ()=>setTab(2);
 }
-function setRightBtnAsEllipsisMenu(){
+function setRightBtnAsHistory(){
   const b = $("rightBarBtn");
   b.innerHTML = `
     <svg class="iosSvgIcon" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M6 12 H6.01"></path>
-      <path d="M12 12 H12.01"></path>
-      <path d="M18 12 H18.01"></path>
+      <path d="M7 7 H17"></path>
+      <path d="M7 12 H17"></path>
+      <path d="M7 17 H14"></path>
     </svg>
   `;
-  b.onclick = ()=>openSheet("tab2MenuMask");
+  b.onclick = ()=>{
+    renderHistory();
+    openSheet("historyMask");
+  };
 }
 function updateFixBarForTab(){
   if(currentTab === 1){
@@ -2175,18 +2038,15 @@ function updateFixBarForTab(){
     setRightBtnAsToTab2();
   }else{
     setLeftBtnAsBackToTab1();
-    setRightBtnAsEllipsisMenu();
+    setRightBtnAsHistory();  // ✅ Tab2：右掣直入食胡記錄
   }
 }
 
-/* ================== ✅ 總番 badge：同步番表 + 顯示揀咗咩 ================== */
+/* ================== 總番 badge：同步番表 + 顯示揀咗咩 ================== */
 function computeFanSummary(){
-  // 由 DOM 直接讀（Tab1 雖然 hidden，但 element 仍然存在）
-  const selected = [];
   const selectedIds = new Set();
   document.querySelectorAll(".fanCheck:checked").forEach(cb=>selectedIds.add(cb.dataset.id));
 
-  // group
   const groups = [];
   let grand = 0;
 
@@ -2195,7 +2055,6 @@ function computeFanSummary(){
     for(const it of g.items){
       const [id,name,fan,meta] = it;
       if(meta === "dealerTimes"){
-        // 連莊次數：計入總番（但唔係 checkbox）
         const times = Math.max(safeInt($("dealer_times")?.value ?? "0", 0), 0);
         const dealerFan = (times > 0) ? (times*2 + 1) : 0;
         if(dealerFan > 0){
@@ -2245,19 +2104,37 @@ function renderFanSummarySheet(){
     for(const g of groups){
       const box = document.createElement("div");
       box.className = "fanSummaryGroup";
-      box.innerHTML = `<div class="gTitle">${catIcon[g.cat]||"📂"} ${g.cat}</div>`;
+      box.style.cssText = `
+        margin-bottom:10px;padding:10px;border-radius:14px;
+        background: rgba(255,255,255,0.03);
+        border:1px solid rgba(128,128,128,0.18);
+      `;
+      if(document.body.classList.contains("white")){
+        box.style.background = "rgba(255,255,255,0.60)";
+        box.style.border = "1px solid rgba(0,0,0,0.08)";
+      }
+      box.innerHTML = `<div style="font-weight:900;color:var(--gold);margin-bottom:6px;font-size:13px;">
+        ${catIcon[g.cat]||"📂"} ${g.cat}
+      </div>`;
       for(const r of g.rows){
         const row = document.createElement("div");
-        row.className = "fanSummaryRow";
-        row.innerHTML = `<div>${r.name}<div class="rSub">${r.detail}</div></div><div style="font-weight:900;color:var(--gold);">${r.fan}番</div>`;
+        row.style.cssText = `
+          display:flex;justify-content:space-between;gap:10px;
+          padding:6px 0;border-bottom:1px dashed rgba(128,128,128,0.18);
+          font-size:13px;
+        `;
+        row.innerHTML = `<div>${r.name}<div style="color:var(--sub);font-weight:800;font-size:12px;margin-top:2px;">${r.detail}</div></div>
+          <div style="font-weight:900;color:var(--gold);">${r.fan}番</div>`;
         box.appendChild(row);
       }
+      const last = box.lastElementChild;
+      if(last) last.style.borderBottom = "none";
       list.appendChild(box);
     }
   }
 
   $("fanSummaryTotalValue").textContent = `${grand}番`;
-  $("totalFan").innerText = String(grand); // 確保同步（理論上已同步）
+  $("totalFan").innerText = String(grand);
 }
 
 /* ======================= 食胡 modal（保持原本邏輯） ======================= */
@@ -2373,7 +2250,6 @@ function confirmWinModal(){
     return;
   }
 
-  // 一炮多響（保持原本）
   const baseFan = safeInt($("totalFan")?.innerText ?? "0", 0);
   if(baseFan <= 0){
     alert("Tab1 總番數係 0，先去 Tab1 勾番");
@@ -2696,43 +2572,19 @@ function bindEvents(){
     saveTab1State();
   });
 
-  // ✅ 中間總番 badge：點擊同步番表選擇 + 顯示詳情 sheet
   $("fanPill").addEventListener("click", ()=>{
     renderFanSummarySheet();
     openSheet("fanSummaryMask");
   });
-
   $("fanSummaryCloseBtn").addEventListener("click", ()=>closeSheet("fanSummaryMask"));
   $("fanSummaryGoTab1Btn").addEventListener("click", ()=>{
     closeSheet("fanSummaryMask");
     setTab(1);
   });
 
-  // ✅ Tab2 menu sheet
-  $("tab2MenuCloseBtn").addEventListener("click", ()=>closeSheet("tab2MenuMask"));
-  $("tab2MenuGoHistoryBtn").addEventListener("click", ()=>{
-    closeSheet("tab2MenuMask");
-    // 跳到 tab2 history
-    setTab(2);
-    setTimeout(()=>{
-      const el = $("historyList");
-      if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
-    }, 80);
-  });
-  $("menuViewHistory").addEventListener("click", ()=>{
-    closeSheet("tab2MenuMask");
-    setTab(2);
-    setTimeout(()=>{
-      const el = $("historyList");
-      if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
-    }, 80);
-  });
-  $("menuClearHistory").addEventListener("click", ()=>{
-    closeSheet("tab2MenuMask");
-    clearHistory();
-  });
+  // ✅ Tab2 History sheet close by tapping mask
+  bindMaskTapToClose("historyMask");
 
-  // ✅ 名字
   for(let seatIdx=0; seatIdx<4; seatIdx++){
     const el = $("n"+seatIdx);
     el.addEventListener("input", ()=>{
@@ -2771,7 +2623,6 @@ function bindEvents(){
   $("yinCancelBtn").addEventListener("click", closeYinModal);
   $("yinOkBtn").addEventListener("click", confirmYinModal);
 
-  // 斬掣
   for(let seatIdx=0; seatIdx<4; seatIdx++){
     $("sl"+seatIdx).addEventListener("click", ()=>slashSeat(seatIdx));
   }
@@ -2790,8 +2641,7 @@ function bindEvents(){
   $("copyHistoryBtn").addEventListener("click", copyHistory);
   $("clearHistoryBtn").addEventListener("click", clearHistory);
 
-  // ✅ 點遮罩關閉（iOS sheet feel）
-  ["winMask","dealerMask","seatMask","yinMask","fanSummaryMask","tab2MenuMask"].forEach(bindMaskTapToClose);
+  ["winMask","dealerMask","seatMask","yinMask","fanSummaryMask"].forEach(bindMaskTapToClose);
 }
 
 /* init */
@@ -2812,12 +2662,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
   setTab(1);
 });
-
-/* ================== 下面：原本缺少嘅 functions（同原版一致） ================== */
-function closeDealerModal(){ closeSheet("dealerMask"); }
-function closeSeatModal(){ closeSheet("seatMask"); window.__seatDraft = null; }
-function closeYinModal(){ closeSheet("yinMask"); }
-
 </script>
 </body>
 </html>
