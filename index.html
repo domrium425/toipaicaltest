@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='40' fill='black'/%3E%3Ctext x='50%25' y='62%25' font-size='110' text-anchor='middle' fill='%23d4af37'%3E%F0%9F%80%84%3C/text%3E%3C/svg%3E">
 
   <!-- ✅ iPhone「加入主畫面」專用 icon（PNG，iOS 可靠） -->
-  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAF/0lEQVR4nO3dS2hVVRzH8c+M0aQmGmW0Qm6oZVqGmQeQ0m2yq2s0mJmQx6pQZg9iQ2aKQZkqkVhWZbQmQm5mWmJbK2kq9e0lGm2b+9zv3b8z3fY7zv3h8f3m8z7n3vOe+55z7n8wqf9gkAAABg6o0kz0cAAACwq3l8vQAAAIAGYgkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAAA4z8F2r2m4gAAAABJRU5ErkJggg==" />
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAF/0lEQVR4nO3dS2hVVRzH8c+M0aQmGmW0Qm6oZVqGmQeQ0m2yq2s0mJmQx6pQZg9iQ2aKQZkqkVhWZbQmQm5mWmJbK2kq9e0lGm2b+9zv3b8z3fY7zv3h8f3m8z7n3vOe+55z7n8wqf9gkAAABg6o0kz0cAAACwq3l8vQAAAIAGYgkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAABgkQkAAAA4z8F2r2m4gAAAABJRU5ErkJggg==" />
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="台牌神器">
@@ -565,7 +565,7 @@ details[open] summary::before{ transform:rotate(90deg); }
   align-items:center;
   justify-content:center;
 
-  font-size:10px;           
+  font-size:10px;
   font-weight:900;
 
   border:none;
@@ -1716,9 +1716,16 @@ function ensurePair(puller, pulled, baseFan){
 }
 function getPairsWherePulledIs(pid){
   const out = [];
+  const want = Number(pid);
   for(const k in pullPairs){
     const p = pullPairs[k];
-    if(p && p.pulled === pid) out.push(p);
+    if(!p) continue;
+    // ✅ 防止 localStorage 讀出嚟變咗 string
+    const pulled = Number(p.pulled);
+    const puller = Number(p.puller);
+    if(Number.isFinite(pulled) && Number.isFinite(puller)){
+      if(pulled === want) out.push({ ...p, pulled, puller });
+    }
   }
   return out;
 }
@@ -1776,7 +1783,6 @@ function renderAllTab2(){
         const p = incoming[0];
         piEl.textContent = `被拉緊第 ${safeInt(p.needles,0)} 針`;
       }else{
-        // 唔改 UI 結構，只係字：顯示「幾條」+ 最高針
         let maxN = 0;
         for(const p of incoming) maxN = Math.max(maxN, safeInt(p.needles,0));
         piEl.textContent = `被拉 ${incoming.length} 條｜最高第 ${maxN} 針`;
@@ -1798,7 +1804,6 @@ function renderAllTab2(){
 
     const sl = $("sl"+seatIdx);
     if(sl){
-      // ✅ 斬：只要「此玩家」有任何一條 incoming 拉係 3/6/9... 就可斬
       const incoming = getPairsWherePulledIs(pid);
       const canSlash = incoming.some(p => {
         const n = safeInt(p.needles,0);
@@ -1856,7 +1861,6 @@ function slashSeat(seatIdx){
 
   pushUndoSnapshot();
 
-  // 清晒所有「別人拉緊 pid」嘅 pair
   for(const p of incoming){
     deletePair(p.puller, p.pulled);
   }
@@ -1882,37 +1886,56 @@ function applyHalfTransferFloor(fromPid, toPid, fan, rate, deltas){
   return { halfFan, amt };
 }
 
-/*
-  ✅ 清拉觸發點（你 confirm 嘅規則）：
-  - 只要「被拉者（pulled）」成為今局贏家，就要同佢所有 puller 結算並清拉
-    - 若 pulled 食返 puller（即 loser==puller 且非自摸）=> 劈（半數）+ 清拉
-    - 否則（pulled 自摸 / 食第三家）=> 引撆（全數）+ 清拉
-*/
+/* =========================================================
+   ✅【逐行 rewrite】清拉邏輯（完全照你 confirm 規則）
+   情況：存在 puller 拉緊 pulled（即 pulled 係「被拉者」）
+   當 pulled 今局贏：
+   - 如果係食胡，且出銃者 == puller → 劈（半數）→ 清呢條拉
+   - 其他贏法（自摸 / 食第三家）→ 清拉（全數畀 puller）→ 清呢條拉
+   - 如果 pulled 同時被多條拉（多人拉佢）→ 逐條計：
+       * 只有「出銃者=該 puller」嗰條係劈，其它全部係清拉（全數）
+========================================================= */
 function settleClearForWinner(winnerPid, loserPidOrNull, isSelf, deltas, notes){
+  // 0) 搵晒「有人拉緊 winner」嘅 incoming
   const incoming = getPairsWherePulledIs(winnerPid);
   if(!incoming.length) return;
 
-  for(const pair of incoming){
-    const puller = pair.puller;
-    const pulled = pair.pulled; // == winnerPid
-    const fan = safeInt(pair.fan, 0);
-    const rate = getRate();
+  const rate = getRate();
+  const winner = Number(winnerPid);
+  const loser = (typeof loserPidOrNull === "number") ? Number(loserPidOrNull) : null;
 
-    if(fan <= 0) {
+  // 1) 逐條 incoming 拉去處理
+  for(const pair of incoming){
+    const puller = Number(pair.puller);
+    const pulled = Number(pair.pulled); // 應該 == winner
+    const fan = Math.max(safeInt(pair.fan, 0), 0);
+
+    // 1a) 安全：資料唔啱就刪咗條 pair
+    if(!Number.isFinite(puller) || !Number.isFinite(pulled) || pulled !== winner){
+      deletePair(pair.puller, pair.pulled);
+      continue;
+    }
+    if(fan <= 0){
       deletePair(puller, pulled);
       continue;
     }
 
-    const isPik = (!isSelf && typeof loserPidOrNull === "number" && loserPidOrNull === puller);
+    // 2) 判斷今局係「劈」定「清拉（引撆 / 斬清）」：
+    //    劈：非自摸 + 出銃者係該 puller
+    const isPik = (!isSelf && loser !== null && loser === puller);
+
     if(isPik){
+      // 2a) 劈：被拉者食返拉者（半數轉帳），之後清呢條拉
       const r = applyHalfTransferFloor(pulled, puller, fan, rate, deltas);
       notes.push(`劈：${getPlayerName(pulled)} → ${getPlayerName(puller)} 半數拉番${r.halfFan}（$${r.amt}）清拉`);
     }else{
+      // 2b) 清拉：被拉者贏但唔係食返該 puller（自摸 / 食第三家）
+      //     → 全數畀 puller，之後清呢條拉
       const amt = applyTransfer(pulled, puller, fan, rate, deltas);
-      notes.push(`引撆：${getPlayerName(pulled)} → ${getPlayerName(puller)} 全數拉番${fan}（$${amt}）清拉`);
+      notes.push(`清拉：${getPlayerName(pulled)} → ${getPlayerName(puller)} 全數畀${fan}（$${amt}）`);
     }
 
-    // ✅ 無論劈/引撆都清拉
+    // 3) 無論劈定清拉，呢條 pair 都要清
     deletePair(puller, pulled);
   }
 }
@@ -1931,32 +1954,27 @@ function settleRound(winnerPid, loserPid, isSelf){
   }
   const rate = getRate();
 
-  // 今局 losers
   const losers = isSelf ? [0,1,2,3].filter(p=>p!==winnerPid) : [loserPid];
 
-  // deltas
   const deltas = [0,0,0,0];
   const notes = [];
 
-  // 1) ✅ 先處理：如果 winner 係「被拉者」，就同所有 puller 清拉結算（劈/引撆）
+  // 1) ✅ 先處理清拉（只會處理「有人拉緊 winner」嘅 incoming；唔會理其他 pair）
   settleClearForWinner(winnerPid, isSelf ? null : loserPid, isSelf, deltas, notes);
 
-  // 2) ✅ 正常食胡/自摸：但「每個 loser」都要用自己 pair 嘅拉番（因為自摸同時拉三家）
-  //    規則：贏家都會拉輸家（食胡/自摸都會）
-  //    settleFan = 開拉/升針後嗰個 fan
-  const perSettle = []; // for info/log
+  // 2) ✅ 正常食胡/自摸：贏家必定拉輸家（食胡/自摸都會）
+  const perSettle = [];
   for(const lp of losers){
     const pair = ensurePair(winnerPid, lp, baseFan);
     const settleFan = safeInt(pair.fan, baseFan);
     const amount = settleFan * rate;
 
+    deltas[lp] -= amount;
+    deltas[winnerPid] += amount;
+
     if(isSelf){
-      deltas[lp] -= amount;
-      deltas[winnerPid] += amount;
       perSettle.push(`${getPlayerName(lp)}：第${pair.needles}針→拉番${settleFan}（$${amount}）`);
     }else{
-      deltas[lp] -= amount;
-      deltas[winnerPid] += amount;
       perSettle.push(`第${pair.needles}針→拉番${settleFan}（$${amount}）`);
     }
   }
@@ -2193,7 +2211,7 @@ function confirmWinModal(){
     return;
   }
 
-  // =================== ✅ 一炮多響（保持 UI 同操作；邏輯改成「每個贏家都會拉出銃者」 + 「每個贏家如果係被拉者就清拉」） ===================
+  // =================== ✅ 一炮多響（保持 UI 同操作；清拉邏輯用同一套 rewrite 版） ===================
   const baseFan = safeInt($("totalFan")?.innerText ?? "0", 0);
   if(baseFan <= 0){
     alert("Tab1 總番數係 0，先去 Tab1 勾番");
@@ -2206,9 +2224,9 @@ function confirmWinModal(){
   const deltas = [0,0,0,0];
   const notes = [];
 
-  // 1) 清拉：任何 winner 只要係被拉者，就同其所有 puller 清拉（劈/引撆）
+  // 1) 清拉：任何 winner 只要係被拉者，就逐條按規則（劈/清拉）
   for(const w of winners){
-    settleClearForWinner(w, loser, false, deltas, notes); // 多響係「食胡」，唔係自摸
+    settleClearForWinner(w, loser, false, deltas, notes);
   }
 
   // 2) 正常多響：出銃者賠 N 份（每份 = 該 winner 對 loser 目前拉番後嘅金額）
@@ -2224,11 +2242,9 @@ function confirmWinModal(){
     perSettle.push(`${getPlayerName(w)}：第${pair.needles}針→拉番${settleFan}（$${amt}）`);
   }
 
-  // 落分 + 動畫
   for(let p=0;p<4;p++) scores[p] += deltas[p];
   for(let p=0;p<4;p++) showScoreDeltaForPid(p, deltas[p]);
 
-  // 莊家更新：保持你原本做法（第一個 winner 當 leader）
   const leader = winners[0];
   if(leader === dealerPlayer){
     dealerStreak[dealerPlayer] = (dealerStreak[dealerPlayer]||0) + 1;
@@ -2482,6 +2498,25 @@ function saveTab2State(){
   };
   localStorage.setItem("tab2_state", JSON.stringify(state));
 }
+
+function normalizePullPairs(obj){
+  // ✅ 防止 localStorage 讀出嚟變 string：puller/pulled/fan/needles 全部轉 number
+  const out = {};
+  if(!obj || typeof obj !== "object") return out;
+  for(const k in obj){
+    const p = obj[k];
+    if(!p) continue;
+    const puller = Number(p.puller);
+    const pulled = Number(p.pulled);
+    const fan = safeInt(p.fan, 0);
+    const needles = Math.max(safeInt(p.needles, 0), 0);
+    const ts = Number(p.ts) || Date.now();
+    if(!Number.isFinite(puller) || !Number.isFinite(pulled)) continue;
+    out[`${puller}>${pulled}`] = { puller, pulled, fan, needles, ts };
+  }
+  return out;
+}
+
 function loadTab2State(){
   const raw = localStorage.getItem("tab2_state");
   if(!raw) return;
@@ -2497,11 +2532,7 @@ function loadTab2State(){
       seatMap = {E:s.seatMap.E??seatMap.E, S:s.seatMap.S??seatMap.S, W:s.seatMap.W??seatMap.W, N:s.seatMap.N??seatMap.N};
       saveSeatMap(seatMap);
     }
-    if(s?.pullPairs && typeof s.pullPairs === "object"){
-      pullPairs = s.pullPairs;
-    }else{
-      pullPairs = {};
-    }
+    pullPairs = normalizePullPairs(s?.pullPairs);
   }catch(e){}
 }
 
@@ -2522,7 +2553,6 @@ function bindEvents(){
   });
   $("clearBtn").addEventListener("click", clearTab1All);
 
-  // ✅ 名字：輸入係「座位 input」但更新係「playerNames[pid]」
   for(let seatIdx=0; seatIdx<4; seatIdx++){
     const el = $("n"+seatIdx);
     el.addEventListener("input", ()=>{
@@ -2561,7 +2591,6 @@ function bindEvents(){
   $("yinCancelBtn").addEventListener("click", closeYinModal);
   $("yinOkBtn").addEventListener("click", confirmYinModal);
 
-  // ✅ 斬掣：按「座位」斬該座位玩家（清拉）
   for(let seatIdx=0; seatIdx<4; seatIdx++){
     $("sl"+seatIdx).addEventListener("click", ()=>slashSeat(seatIdx));
   }
